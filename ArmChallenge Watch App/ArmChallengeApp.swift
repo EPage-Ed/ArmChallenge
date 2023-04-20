@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import HealthKit
 
 @main
 struct ArmChallenge_Watch_AppApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+  @StateObject var armModel = ArmViewModel()
+  
+  var body: some Scene {
+    WindowGroup {
+      ContentView(armVM: armModel)
+        .onAppear {
+          armModel.requestAuthorization()
         }
     }
+  }
 }

@@ -12,6 +12,7 @@
 		D8FB081229EF514500714C3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FB081129EF514500714C3A /* ContentView.swift */; };
 		D8FB081429EF514600714C3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8FB081329EF514600714C3A /* Assets.xcassets */; };
 		D8FB081729EF514600714C3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8FB081629EF514600714C3A /* Preview Assets.xcassets */; };
+		D8FB082329EF55C100714C3A /* ArmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FB082229EF55C100714C3A /* ArmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +40,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D850399A29F111E000677D23 /* ArmChallenge-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ArmChallenge-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D8FB080429EF514500714C3A /* ArmChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArmChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FB080A29EF514500714C3A /* ArmChallenge Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArmChallenge Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FB080F29EF514500714C3A /* ArmChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmChallengeApp.swift; sourceTree = "<group>"; };
 		D8FB081129EF514500714C3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D8FB081329EF514600714C3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8FB081629EF514600714C3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D8FB082129EF517700714C3A /* ArmChallenge Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ArmChallenge Watch App.entitlements"; sourceTree = "<group>"; };
+		D8FB082229EF55C100714C3A /* ArmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +82,11 @@
 		D8FB080E29EF514500714C3A /* ArmChallenge Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				D850399A29F111E000677D23 /* ArmChallenge-Watch-App-Info.plist */,
+				D8FB082129EF517700714C3A /* ArmChallenge Watch App.entitlements */,
 				D8FB080F29EF514500714C3A /* ArmChallengeApp.swift */,
 				D8FB081129EF514500714C3A /* ContentView.swift */,
+				D8FB082229EF55C100714C3A /* ArmModel.swift */,
 				D8FB081329EF514600714C3A /* Assets.xcassets */,
 				D8FB081529EF514600714C3A /* Preview Content */,
 			);
@@ -193,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8FB081229EF514500714C3A /* ContentView.swift in Sources */,
+				D8FB082329EF55C100714C3A /* ArmModel.swift in Sources */,
 				D8FB081029EF514500714C3A /* ArmChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,13 +330,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ArmChallenge Watch App/ArmChallenge Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ArmChallenge Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 2BY2NMR4CA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ArmChallenge-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = ArmChallenge;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your workout related data will be used to display your activity during a workout.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Workouts tracked by Arm Challenge on Apple Watch will be saved to HealthKit.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -343,7 +355,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -352,13 +364,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ArmChallenge Watch App/ArmChallenge Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ArmChallenge Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 2BY2NMR4CA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ArmChallenge-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = ArmChallenge;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your workout related data will be used to display your activity during a workout.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Workouts tracked by Arm Challenge on Apple Watch will be saved to HealthKit.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -374,7 +390,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
