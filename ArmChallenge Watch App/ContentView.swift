@@ -15,6 +15,7 @@ struct ContentView: View {
       VStack {
         ForEach(armVM.rounds, id:\.self) { round in
           Text(round.duration.timeStringMS)
+            .monospaced()
         }
         .font(.title)
         Button("Again") {
@@ -41,7 +42,9 @@ struct ContentView: View {
           .font(.title2)
           
           GeometryReader { geo in
+            // Scale circle inside our space.  0 <= motion <= 1
             let s = (min(geo.size.width, geo.size.height) - 10) * armVM.motion + 10
+            // Hue goes from green (0.333) to red (0.0)
             let hue = 0.333 - armVM.motion * 0.333
             Circle()
               .fill(Color(hue: hue, saturation: 1, brightness: 1))
@@ -53,15 +56,11 @@ struct ContentView: View {
                 Text(armVM.state == .idle ? "Tap to Start" : "")
                   .font(.largeTitle)
                   .foregroundColor(.orange)
-                /*
-                 Text((armVM.motion * 100).formatted(.number.rounded().precision(.fractionLength(0))))
-                 .font(.largeTitle)
-                 */
               }
           }
         }
       }
-      .contentShape(Rectangle())
+      .contentShape(Rectangle())  // Allow tap anywhere
       .onTapGesture {
         armVM.start()
       }
